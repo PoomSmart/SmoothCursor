@@ -1,28 +1,9 @@
 #import "../PS.h"
 
-%group iOS8
-
-%hook UITextSelectionView
-
-static char overrideAnimationKey;
-
-- (BOOL)dynamicCaret
-{
-	return [objc_getAssociatedObject(self, &overrideAnimationKey) boolValue] ? YES : %orig;
-}
-
-- (void)updateSelectionRects
-{
-	objc_setAssociatedObject(self, &overrideAnimationKey, @YES, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-	%orig;
-	objc_setAssociatedObject(self, &overrideAnimationKey, @NO, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-%end
-
-%end
-
-%group preiOS8
+// The pre-iOS8 group seemed to fix the UITextField content removal bug in 
+// iOS 8.3 as well as it being completely compatible with iOS 8.1.2, 8.2b2 and 8.3
+// with no noticible bugs or adverse effects. 
+// - ravecode
 
 %hook UITextSelectionView
 
@@ -32,8 +13,6 @@ static char overrideAnimationKey;
 		%orig;
 	}];
 }
-
-%end
 
 %end
 
@@ -50,11 +29,11 @@ static char overrideAnimationKey;
 
 %end*/
 
-%ctor
+/*%ctor
 {
 	if (isiOS8Up) {
 		%init(iOS8);
 	} else {
 		%init(preiOS8);
 	}
-}
+}*/
