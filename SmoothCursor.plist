@@ -1,0 +1,10 @@
+{
+	CoreFoundationVersion = (
+		"847.20"
+	);
+	Filter = {
+		Bundles = (
+			"com.apple.UIKit"
+		);
+	};
+}
