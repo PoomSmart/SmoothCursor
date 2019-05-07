@@ -1,6 +1,6 @@
 Package: org.thebigboss.smoothcursor
 Name: SmoothCursor
-Depends: mobilesubstrate, firmware (>= 4.0)
+Depends: mobilesubstrate, firmware (>= 6.0)
 Version: 1.0
 Architecture: iphoneos-arm
 Description: Office 2013-styled cursor animation.
