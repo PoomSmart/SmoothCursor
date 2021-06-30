@@ -2,8 +2,7 @@
 
 %hook UITextSelectionView
 
-- (void)updateSelectionRects
-{
+- (void)updateSelectionRects {
     [UIView animateWithDuration:0.2 animations:^{
         %orig;
     }];

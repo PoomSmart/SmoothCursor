@@ -10,7 +10,8 @@ endif
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = SmoothCursor
-SmoothCursor_FILES = Tweak.xm
+SmoothCursor_FILES = Tweak.x
+SmoothCursor_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 
